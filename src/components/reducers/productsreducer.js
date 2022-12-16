@@ -1,4 +1,7 @@
+//Initial value of Product 
 const products = [];
+
+// Create Reducer 
 export const getProductsreducer = (state = { products }, action) => {
   switch (action.type) {
     case "SUCCESS_GET_PRODUCTS":

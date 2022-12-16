@@ -5,11 +5,15 @@ import "./maincomp.css";
 import { getProducts } from "../actions/action";
 import { useDispatch, useSelector } from "react-redux";
 const Maincomp = () => {
+  
   const dispatch = useDispatch();
 
+  // get data from redux store
   const { products } = useSelector((state) => state.getproductsData);
   console.log(products);
 
+
+  // dispatch all api data to redux
   useEffect(()=>{
     dispatch(getProducts())
   },[])
