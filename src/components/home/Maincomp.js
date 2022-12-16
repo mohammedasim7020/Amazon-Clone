@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Banner from "./Banner";
 import Slide from "./Slide";
 import "./maincomp.css";
+import { getProducts } from "../actions/action";
+import { useDispatch, useSelector } from "react-redux";
 const Maincomp = () => {
+  const dispatch = useDispatch();
+
+  const { products } = useSelector((state) => state.getproductsData);
+  console.log(products);
+
+  useEffect(()=>{
+    dispatch(getProducts())
+  },[])
   return (
     <div className="home_section">
       <div className="banner_section">
